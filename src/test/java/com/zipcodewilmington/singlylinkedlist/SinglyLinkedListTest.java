@@ -19,7 +19,6 @@ public class SinglyLinkedListTest {
     @Test
     public void addIntegerTest2(){
         SinglyLinkedList<Integer> singlyLinkedInt = new SinglyLinkedList<Integer>();
-        singlyLinkedInt.add(10);
 
         Assert.assertFalse(singlyLinkedInt.contains(20));
     }
@@ -61,5 +60,38 @@ public class SinglyLinkedListTest {
 
         singlyLinkedInt.remove(1);
         Assert.assertFalse(singlyLinkedInt.contains(20));
+    }
+
+    @Test
+    public void findTest(){
+        SinglyLinkedList<Integer> singlyLinkedInt = new SinglyLinkedList<Integer>();
+        singlyLinkedInt.add(10);
+        singlyLinkedInt.add(20);
+
+        Integer expected = 1;
+        Integer actual = singlyLinkedInt.find(20);
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void findTest2(){
+        SinglyLinkedList<Integer> singlyLinkedInt = new SinglyLinkedList<Integer>();
+        singlyLinkedInt.add(10);
+        singlyLinkedInt.add(20);
+
+        Integer expected = 0;
+        Integer actual = singlyLinkedInt.find(10);
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void findTest3(){
+        SinglyLinkedList<Integer> singlyLinkedInt = new SinglyLinkedList<Integer>();
+        singlyLinkedInt.add(10);
+        singlyLinkedInt.add(20);
+
+        Integer expected = -1;
+        Integer actual = singlyLinkedInt.find(30);
+        Assert.assertEquals(expected,actual);
     }
 }

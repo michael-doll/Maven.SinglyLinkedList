@@ -83,7 +83,21 @@ public class SinglyLinkedList<E> implements Iterable {
         return false;
     }
 
-    public Integer find(){return 0; }
+    public Integer find(E data){
+        int currentIndex = 0;
+        int index = -1;
+        Node node = head;
+
+        while (node != null) {
+            if(node.data != null && node.data.equals(data)){
+                index = currentIndex;
+            }
+            node = node.next;
+            currentIndex++;
+        }
+        return index;
+    }
+
     public E copy(){return null; }
     public E sort(){return null ; }
 
