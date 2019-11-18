@@ -40,8 +40,33 @@ public class SinglyLinkedList<E> implements Iterable {
             tail = newNode;
         }
     }
+    //re evaluate this
+    public void remove(Integer index){
+        if(head == null){
+            return;
+        }
 
-    public void remove(){}
+        Node temp = head;
+
+        if(index == 0){
+            head = temp.next;
+            return;
+        }
+
+        for (int i = 0; temp != null && i <index -1 ; i++) {
+            temp = temp.next;
+        }
+
+        if(temp == null || temp.next == null) {
+            return;
+        }
+
+        // temp -> next should be deleted
+        // point to temp -> next -> next
+        Node next = temp.next.next;
+
+        temp.next = next;
+    }
 
     public Boolean contains(E data){
         Node current = head;
@@ -64,7 +89,7 @@ public class SinglyLinkedList<E> implements Iterable {
 
     public Iterator iterator() { return null; }
 
-    //Testing
+//    //Testing
 //    public void display() {
 //        Node current = head;
 //
