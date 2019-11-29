@@ -24,11 +24,19 @@ public class SinglyLinkedList<E> implements Iterable {
 
 
     public SinglyLinkedList(){
-        this.head = head;
-        this.tail = tail;
+//        this.head = head;
+//        this.tail = tail;
     }
 
-//add remove contains find size get copy sort
+
+// add
+// remove
+// contains
+// find
+// size
+// get
+// copy
+// sort
 
     public void add(E data){
         Node newNode = new Node(data);
@@ -41,6 +49,7 @@ public class SinglyLinkedList<E> implements Iterable {
         }
     }
     //re evaluate this
+    //** whole fucking thing
     public void remove(Integer index){
         if(head == null){
             return;
@@ -64,7 +73,6 @@ public class SinglyLinkedList<E> implements Iterable {
         // temp -> next should be deleted
         // point to temp -> next -> next
         Node next = temp.next.next;
-
         temp.next = next;
     }
 
@@ -98,7 +106,17 @@ public class SinglyLinkedList<E> implements Iterable {
         return index;
     }
 
-    public E copy(){return null; }
+    public SinglyLinkedList<E> copy(){
+        SinglyLinkedList<E> copiedList = new SinglyLinkedList<E>();
+
+        Node node = head;
+        while(node!= null){
+            copiedList.add(node.data);
+            node = node.next;
+        }
+        return copiedList;
+    }
+
     public E sort(){return null ; }
 
     public Iterator iterator() { return null; }

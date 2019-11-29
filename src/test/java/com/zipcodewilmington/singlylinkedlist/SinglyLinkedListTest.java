@@ -94,4 +94,28 @@ public class SinglyLinkedListTest {
         Integer actual = singlyLinkedInt.find(30);
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void copyTest(){
+        SinglyLinkedList<Integer> singlyLinkedInt = new SinglyLinkedList<Integer>();
+        singlyLinkedInt.add(10);
+        singlyLinkedInt.add(20);
+        singlyLinkedInt.add(30);
+        SinglyLinkedList<Integer> singlyLinkedIntCopy = singlyLinkedInt.copy();
+        Assert.assertTrue(singlyLinkedIntCopy.contains(10));
+        Assert.assertTrue(singlyLinkedIntCopy.contains(20));
+        Assert.assertTrue(singlyLinkedIntCopy.contains(30));
+    }
+
+    @Test
+    public void copyTest2(){
+        SinglyLinkedList<String> singlyLinkedString = new SinglyLinkedList<String>();
+        singlyLinkedString.add("Taco");
+        singlyLinkedString.add("Burger");
+        singlyLinkedString.add("Telephone");
+        SinglyLinkedList<String> singlyLinkedStringCopy = singlyLinkedString.copy();
+        Assert.assertTrue(singlyLinkedStringCopy.contains("Taco"));
+        Assert.assertTrue(singlyLinkedStringCopy.contains("Burger"));
+        Assert.assertTrue(singlyLinkedStringCopy.contains("Telephone"));
+    }
 }
